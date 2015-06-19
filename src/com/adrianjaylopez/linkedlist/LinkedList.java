@@ -1,5 +1,7 @@
 package com.adrianjaylopez.linkedlist;
 
+import java.util.Iterator;
+
 /**
  * Collection of nodes that are linked together
  *
@@ -123,6 +125,29 @@ public class LinkedList<T> {
         if (count == 0) //if there are no nodes in the linked list
             tail = null; //set the tail to null
         return value; //return the value
+    }
+
+    /**
+     * Used to remove the last node from a linked list and return the value
+     * back to the caller
+     * @return the value of the node
+     */
+    public T removeLast(){
+        if (count == 0)
+            return null;
+        LinkedListNode<T> current = head;
+        T value = tail.getValue();
+        for (int i = 1; i <= count - 1; i++){
+            current.getNext();
+            if ((count - 1) == i)
+                tail = current;
+        }
+        return value;
+    }
+
+
+    public Iterator<T> iterator(){
+        return this.iterator();
     }
 
 
