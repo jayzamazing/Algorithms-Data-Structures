@@ -1,4 +1,4 @@
-package bubblesort;
+package com.adrianjaylopez.bubblesort;
 
 /**
  * This class is for the bubble sort algorithm. O(n^2)
@@ -17,7 +17,7 @@ public class BubbleSort<T extends Comparable<? super T>>{
             notSorted = false;//breaks loop if nothing left to sort
 
             for (int i = 0; i < values.length - 1; i++){//iterate over array
-                if (values[i].compareTo(values[i - 1]) > 0){//if values are not in order
+                if (values[i].compareTo(values[i + 1]) > 0){//if values are not in order
                     T temp = values[i];//store current value in variable
                     values[i] = values[i + 1];//set current variable to next value
                     values[i + 1] = temp;//set next variable to current
