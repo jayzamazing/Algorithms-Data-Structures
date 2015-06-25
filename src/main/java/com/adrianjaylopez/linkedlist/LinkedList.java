@@ -5,7 +5,9 @@ import java.util.Iterator;
 /**
  * Collection of nodes that are linked together
  *
- * @author Adrian J Lopez
+ * @Author Adrian J Lopez
+ * @since <pre>6/20/15</pre>
+ * @version 1.0
  * @param <T> generic type parameter
  */
 public class LinkedList<T> {
@@ -133,19 +135,63 @@ public class LinkedList<T> {
      * @return the value of the node
      */
     public T removeLast(){
-        if (count == 0)
-            return null;
+        if (count == 0) // if there are no nodes in the linked list
+            return null; //return nothing
         LinkedListNode<T> current = head;
-        T value = tail.getValue();
-        for (int i = 1; i <= count - 1; i++){
-            current.getNext();
-            if ((count - 1) == i)
-                tail = current;
+        if (count == 1){ //if there is only one node
+            head = null; //set tail and head to null
+            tail = null;
+            return current.getValue(); //return the value of the node
         }
-        return value;
+        T value = tail.getValue(); //hold tail value to return later
+        for (int i = 1; i <= count - 1; i++){ //iterate through nodes
+            current.getNext();//get the next node
+            if ((count - 1) == i) //current node is the node before last
+                tail = current; //set the tail to the previous node
+        }
+        return value; //return the tail value
     }
 
+    /**
+     * Used to search for a value and to get the position of the value
+     * @param searchFor value to search for
+     * @return index of node
+     */
+    public int search(T searchFor){
+        if (count == 0) // if there are no nodes in the linked list
+            return -1; //indicates empty list
+        int index = 1;
+        LinkedListNode<T> current = head;
+        for (int i = 1; i <= count; i++){ //iterate through nodes
+            if (current.getValue() == searchFor) //current node value matches search
+                return index; //return index of the node
+            else //otherwise
+                current.getNext(); //get the next node
+        }
+        return -1; ////indicates node not found
+    }
 
+    /**
+     * Used to delete the first node with a set value
+     * @param searchFor value that is being searched for
+     * @return deleted value or null if not deleted
+     */
+    public T delete(T searchFor){
+        int location = search(searchFor);
+        if (location == -1)
+            return null;
+        LinkedListNode<T> current = head;
+        for (int i = 1; i <= location; i++){
+            if (i == location - 1)
+                current = current.getNext().getNext();
+        }
+        return searchFor;
+    }
+
+    /**
+     * Method to return an iterator
+     * @return iterator
+     */
     public Iterator<T> iterator(){
         return this.iterator();
     }

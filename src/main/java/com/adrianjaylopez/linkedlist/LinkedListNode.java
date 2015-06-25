@@ -3,7 +3,9 @@ package com.adrianjaylopez.linkedlist;
 /**
  * A Node for use with a singly linked list
  *
- * @author Adrian J Lopez
+ * @Author Adrian J Lopez
+ * @since <pre>6/18/15</pre>
+ * @version 1.0
  * @param <T> generic type parameter
  */
 public class LinkedListNode<T> {
@@ -13,7 +15,6 @@ public class LinkedListNode<T> {
 
     /**
      * Constructor to create node with set value
-     *
      * @param value value held inside node
      */
     public LinkedListNode(T value) {

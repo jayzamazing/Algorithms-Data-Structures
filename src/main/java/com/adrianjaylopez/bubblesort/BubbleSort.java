@@ -1,8 +1,13 @@
 package com.adrianjaylopez.bubblesort;
 
+import java.util.Arrays;
+
 /**
  * This class is for the bubble sort algorithm. O(n^2)
- * @author Adrian J Lopez
+ * @Author Adrian J Lopez
+ * @since <pre>6/18/15</pre>
+ * @version 1.1
+ * @param <T> generic type parameter
  */
 public class BubbleSort<T extends Comparable<? super T>>{
     /**
@@ -28,4 +33,12 @@ public class BubbleSort<T extends Comparable<? super T>>{
         }
     }
 
+    /**
+     * This is basically does the sorting but just using a method reference
+     * from Java 8.
+     * @param values generic array to be sorted
+     */
+    public void bubbleSort2(T[] values){
+        Arrays.sort(values,T::compareTo);
+    }
 }
