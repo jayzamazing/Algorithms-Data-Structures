@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * Collection of nodes that are linked together
  *
- * @Author Adrian J Lopez
+ * @author Adrian J Lopez
  * @since <pre>6/20/15</pre>
  * @version 1.0
  * @param <T> generic type parameter
