@@ -4,6 +4,9 @@ import com.adrianjaylopez.HelperMethods;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Iterator;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -26,6 +29,14 @@ public class LinkedListTest {
     @Before
     public void setUp() throws Exception {
         list = new LinkedList<>();//initialize object
+        node = new LinkedListNode<>(7);//initialize node with value
+        next = new LinkedListNode<>(8);//initialize node with value
+        next2 = new LinkedListNode<>(9);//initialize node with value
+        HelperMethods.reflectionSetHelper("next", next, node);//call helper method to do reflection for setting variable
+        HelperMethods.reflectionSetHelper("next", next2, next);//call helper method to do reflection for setting variable
+        HelperMethods.reflectionSetHelper("head", node, list);//use helper set method to set the head node
+        HelperMethods.reflectionSetHelper("tail", next2, list);//use helper set method to set the tail node
+        HelperMethods.reflectionSetHelper("count", 3, list);//use helper set method to set the count
     }
 
     /**
@@ -45,8 +56,7 @@ public class LinkedListTest {
      */
     @Test
     public void testGetCount() throws Exception {
-        HelperMethods.reflectionSetHelper("count", 5, list);//use helper set method and set the count to 5
-        assertEquals(list.getCount(), 5);//get the count and compare to expected results
+        assertEquals(list.getCount(), 3);//get the count and compare to expected results
     }
 
     /**
@@ -55,8 +65,6 @@ public class LinkedListTest {
      */
     @Test
     public void testGetHead() throws Exception {
-        node = new LinkedListNode<>(7);//initialize node with value
-        HelperMethods.reflectionSetHelper("head", node, list);//use helper set method to set the head node
         assertEquals(list.getHead(), node);//get the head node and compare against expected result
     }
 
@@ -66,9 +74,7 @@ public class LinkedListTest {
      */
     @Test
     public void testGetTail() throws Exception {
-        node = new LinkedListNode<>(12);//initialize node with value
-        HelperMethods.reflectionSetHelper("tail", node, list);//use helper set method to set the tail node
-        assertEquals(list.getTail(), node);//get the head node and compare against expected result
+        assertEquals(list.getTail(), next2);//get the tail node and compare against expected result
     }
 
     /**
@@ -77,11 +83,7 @@ public class LinkedListTest {
      */
     @Test
     public void testFirst() throws Exception {
-        list.first();
-        assertEquals(list.first(), null);//get the head node and compare against expected result
-        node = new LinkedListNode<>(7);//initialize node with value
-        HelperMethods.reflectionSetHelper("head", node, list);//use helper set method to set the head node
-        assertEquals(list.first(), node);//get the head node and compare against expected result
+        assertEquals(list.first(), node.getValue());//get the first node and compare against expected result
     }
 
     /**
@@ -90,10 +92,7 @@ public class LinkedListTest {
      */
     @Test
     public void testLast() throws Exception {
-        assertEquals(list.last(), null);//get the head node and compare against expected result
-        node = new LinkedListNode<>(7);//initialize node with value
-        HelperMethods.reflectionSetHelper("tail", node, list);//use helper set method to set the head node
-        assertEquals(list.last(), node);//get the head node and compare against expected result
+        assertEquals(list.last(), next2.getValue());//get the last node and compare against expected result
     }
 
     /**
@@ -102,12 +101,11 @@ public class LinkedListTest {
      */
     @Test
     public void testAddFirst() throws Exception {
-        list.addFirst(15);//add a value to the list
-        assertEquals(HelperMethods.reflectionGetHelper("head", list), 15);//get the head node and compare against expected result
-        assertEquals(HelperMethods.reflectionGetHelper("tail", list), 15);//get the head node and compare against expected result
-        list.addFirst(9);//add value to the list
-        assertEquals(HelperMethods.reflectionGetHelper("head", list), 9);//get the head node and compare against expected result
-        assertEquals(HelperMethods.reflectionGetHelper("tail", list), 15);//get the head node and compare against expected result
+        list.addFirst(6);//add a value to the list
+        assertEquals(((LinkedListNode)HelperMethods.reflectionGetHelper("head", list)).getValue(), 6);//get the head node and compare against expected result
+        assertEquals(((LinkedListNode)HelperMethods.reflectionGetHelper("tail", list)).getValue(), 9);//get the tail node and compare against expected result
+        assertEquals(HelperMethods.reflectionGetHelper("count", list), 4);//get the count and compare to expected results
+
     }
 
     /**
@@ -116,12 +114,10 @@ public class LinkedListTest {
      */
     @Test
     public void testAddLast() throws Exception {
-        list.addLast(15);//add a value to the list
-        assertEquals(HelperMethods.reflectionGetHelper("head", list), 15);//get the head node and compare against expected result
-        assertEquals(HelperMethods.reflectionGetHelper("tail", list), 15);//get the head node and compare against expected result
-        list.addLast(9);//add value to the list
-        assertEquals(HelperMethods.reflectionGetHelper("head", list), 15);//get the head node and compare against expected result
-        assertEquals(HelperMethods.reflectionGetHelper("tail", list), 9);//get the head node and compare against expected result
+        list.addLast(10);//add a value to the list
+        assertEquals(HelperMethods.reflectionGetHelper("head", list), node);//get the head node and compare against expected result
+        assertEquals(((LinkedListNode)HelperMethods.reflectionGetHelper("tail", list)).getValue(), 10);//get the tail node and compare against expected result
+        assertEquals(HelperMethods.reflectionGetHelper("count", list), 4);//get the count and compare to expected results
     }
 
     /**
@@ -130,40 +126,35 @@ public class LinkedListTest {
      */
     @Test
     public void testRemoveFirst() throws Exception {
-        node = new LinkedListNode<>(7);//initialize node with value
-        next = new LinkedListNode<>(8);
-        next2 = new LinkedListNode<>(9);
-        node.setNext(next);
-        next.setNext(next2);
-        HelperMethods.reflectionSetHelper("head", node, list);//use helper set method to set the head node
-        HelperMethods.reflectionSetHelper("tail", node.getNext().getNext(), list);//use helper set method to set the head node
-        assertEquals(list.removeFirst(), node.getValue());
+        assertEquals(list.removeFirst(), node.getValue());//remove the first node from the list and compare against expected results
+        assertEquals(((LinkedListNode)HelperMethods.reflectionGetHelper("head", list)).getValue(), 8);//get the head node and compare against expected result
+        assertEquals(((LinkedListNode)HelperMethods.reflectionGetHelper("tail", list)).getValue(), 9);//get the tail node and compare against expected result
+        assertEquals(HelperMethods.reflectionGetHelper("count", list), 2);//get the count and compare to expected results
     }
 
     @Test
     public void testRemoveLast() throws Exception {
-        node = new LinkedListNode<>(7);//initialize node with value
-        next = new LinkedListNode<>(8);
-        next2 = new LinkedListNode<>(9);
-        node.setNext(next);
-        next.setNext(next2);
-        HelperMethods.reflectionSetHelper("head", node, list);//use helper set method to set the head node
-        HelperMethods.reflectionSetHelper("tail", node.getNext().getNext(), list);//use helper set method to set the head node
-        assertEquals(list.removeLast(), next2.getValue());
+        assertEquals(list.removeLast(), next2.getValue());//remove the first node from the list and compare against expected results
+        assertEquals(((LinkedListNode)HelperMethods.reflectionGetHelper("tail", list)).getValue(), 8);//get the tail node and compare against expected result
+        assertEquals(HelperMethods.reflectionGetHelper("count", list), 2);//get the count and compare to expected results
     }
 
     @Test
     public void testSearch() throws Exception {
-
+        assertEquals(list.search(8), 2);//search for node and compare against expected results
     }
 
     @Test
     public void testDelete() throws Exception {
+        assertEquals(list.delete(8), (Integer) 8);//delete node and compare against expected results
+        assertEquals(HelperMethods.reflectionGetHelper("count", list), 2);//get the count and compare to expected results
 
     }
 
     @Test
     public void testIterator() throws Exception {
-
+        Iterator it = list.iterator();//get iterator from class
+        assertEquals(it.hasNext(), true);//call hasnext method and compare against expected results
+        assertEquals(it.next(), next);//call next method and compare against expected results
     }
 }

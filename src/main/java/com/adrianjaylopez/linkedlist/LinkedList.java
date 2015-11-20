@@ -10,7 +10,7 @@ import java.util.Iterator;
  * @version 1.0
  * @param <T> generic type parameter
  */
-public class LinkedList<T> {
+public class LinkedList<T> implements Iterable<LinkedList<T>>{
     //instance variables
     private LinkedListNode<T> head = null, tail = null; //head and tail nodes
     private int count = 0; //amount of nodes in list
@@ -145,10 +145,12 @@ public class LinkedList<T> {
         }
         T value = tail.getValue(); //hold tail value to return later
         for (int i = 1; i <= count - 1; i++){ //iterate through nodes
-            current.getNext();//get the next node
+
             if ((count - 1) == i) //current node is the node before last
                 tail = current; //set the tail to the previous node
+            current = current.getNext();//get the next node
         }
+        count--;
         return value; //return the tail value
     }
 
@@ -165,8 +167,10 @@ public class LinkedList<T> {
         for (int i = 1; i <= count; i++){ //iterate through nodes
             if (current.getValue() == searchFor) //current node value matches search
                 return index; //return index of the node
-            else //otherwise
-                current.getNext(); //get the next node
+            else {//otherwise
+                current = current.getNext(); //get the next node
+                index++;
+            }
         }
         return -1; ////indicates node not found
     }
@@ -185,6 +189,7 @@ public class LinkedList<T> {
             if (i == location - 1)
                 current = current.getNext().getNext();
         }
+        count--;
         return searchFor;
     }
 
@@ -192,8 +197,27 @@ public class LinkedList<T> {
      * Method to return an iterator
      * @return iterator
      */
-    public Iterator<T> iterator(){
-        return this.iterator();
+    @Override
+    public Iterator iterator(){
+        return new Iterator<LinkedListNode<T>>() {
+
+            private int cursor = 1;
+            LinkedListNode<T> current = head;
+            @Override
+            public boolean hasNext() {
+                return cursor < count;
+            }
+
+            @Override
+            public LinkedListNode<T> next() {
+                if(this.hasNext()){
+                    current = current.getNext();
+                    cursor ++;
+                    return current;
+                }
+                return null;
+            }
+        };
     }
 
 
