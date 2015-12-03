@@ -7,8 +7,7 @@ import java.util.Iterator;
  *
  * @author Adrian J Lopez
  * @since <pre>6/20/15</pre>
- * @version 1.0
- * @param <T> generic type parameter
+ * @version 1.5
  */
 public class LinkedList<T> implements Iterable<LinkedList<T>>{
     //instance variables

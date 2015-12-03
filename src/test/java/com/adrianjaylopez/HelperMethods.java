@@ -5,7 +5,7 @@ import java.lang.reflect.Field;
 /**
  * Extracted methods and made them static to help with reflection in the test classes.
  * @version 1.0
- * @Author Adrian J Lopez
+ * @author Adrian J Lopez
  * @since <pre>7/12/15</pre>
  */
 public class HelperMethods {

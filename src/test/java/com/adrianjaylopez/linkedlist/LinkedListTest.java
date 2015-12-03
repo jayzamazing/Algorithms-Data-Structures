@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Tests the linkedlist class
- * @version 1.0
+ * @version 1.2
  * @author Adrian J Lopez
  * @since <pre>6/24/15</pre>
  */

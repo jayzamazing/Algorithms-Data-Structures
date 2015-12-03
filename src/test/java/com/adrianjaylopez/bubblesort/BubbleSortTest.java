@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 /**
  * This class tests the bubble sort class.
- * @Author Adrian J Lopez
+ * @author Adrian J Lopez
  * @since <pre>6/20/15</pre>
  * @version 1.2
  */

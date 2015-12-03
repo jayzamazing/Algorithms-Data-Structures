@@ -4,10 +4,9 @@ import java.util.Arrays;
 
 /**
  * This class is for the bubble sort algorithm. O(n^2)
- * @Author Adrian J Lopez
+ * @author Adrian J Lopez
  * @since <pre>6/18/15</pre>
  * @version 1.1
- * @param <T> generic type parameter
  */
 public class BubbleSort<T extends Comparable<? super T>>{
     /**

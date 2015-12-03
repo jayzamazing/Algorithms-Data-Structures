@@ -3,6 +3,9 @@ package com.adrianjaylopez.leetcode;
 /**
  * This class is used to see if a word is an anagram of another word or not. O(n) time
  * Created by Jay on 11/22/15.
+ * @author Adrian J Lopez
+ * @since <pre>11/22/15</pre>
+ * @version 1.0
  */
 public class Anagram {
     /**

@@ -2,7 +2,9 @@ package com.adrianjaylopez.leetcode;
 
 /**
  * Class to test anagram class.
- * Created by Jay on 11/27/15.
+ * @author Adrian J Lopez
+ * @since <pre>11/27/15</pre>
+ * @version 1.2
  */
 import org.junit.After;
 import org.junit.Before;

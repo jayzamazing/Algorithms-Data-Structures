@@ -3,10 +3,9 @@ package com.adrianjaylopez.linkedlist;
 /**
  * A Node for use with a singly linked list
  *
- * @Author Adrian J Lopez
+ * @author Adrian J Lopez
  * @since <pre>6/18/15</pre>
- * @version 1.0
- * @param <T> generic type parameter
+ * @version 1.4
  */
 public class LinkedListNode<T> {
     //instance variables
