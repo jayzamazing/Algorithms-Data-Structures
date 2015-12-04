@@ -6,7 +6,7 @@ import java.util.Arrays;
  * This class is for the bubble sort algorithm. O(n^2)
  * @author Adrian J Lopez
  * @since <pre>6/18/15</pre>
- * @version 1.1
+ * @version 2.0
  */
 public class BubbleSort<T extends Comparable<? super T>>{
     /**

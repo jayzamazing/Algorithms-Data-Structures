@@ -5,7 +5,7 @@ package com.adrianjaylopez.linkedlist;
  *
  * @author Adrian J Lopez
  * @since <pre>6/18/15</pre>
- * @version 1.4
+ * @version 2.0
  */
 public class LinkedListNode<T> {
     //instance variables

@@ -7,7 +7,7 @@ import java.util.Iterator;
  *
  * @author Adrian J Lopez
  * @since <pre>6/20/15</pre>
- * @version 1.5
+ * @version 2.0
  */
 public class LinkedList<T> implements Iterable<LinkedList<T>>{
     //instance variables

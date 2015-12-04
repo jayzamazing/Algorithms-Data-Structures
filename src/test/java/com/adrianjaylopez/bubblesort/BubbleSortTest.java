@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  * This class tests the bubble sort class.
  * @author Adrian J Lopez
  * @since <pre>6/20/15</pre>
- * @version 1.2
+ * @version 2.0
  */
 public class BubbleSortTest {
 

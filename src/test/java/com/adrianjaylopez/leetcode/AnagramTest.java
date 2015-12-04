@@ -4,7 +4,7 @@ package com.adrianjaylopez.leetcode;
  * Class to test anagram class.
  * @author Adrian J Lopez
  * @since <pre>11/27/15</pre>
- * @version 1.2
+ * @version 2.0
  */
 import org.junit.After;
 import org.junit.Before;
