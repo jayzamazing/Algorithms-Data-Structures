@@ -23,7 +23,6 @@ public class UF {
     public UF(int items){
         if (items < 0)
             throw new IllegalArgumentException("Please enter a number that is >= 0");
-        count = items;
         parent = new int[items];//initialize array to amount of items
         count = items;//store items in class
         rank = new byte[items];
@@ -37,7 +36,6 @@ public class UF {
      * Joins a set of points together with a different set.
      * @param point1 original set of points
      * @param point2 set of points to join with
-     * @throws
      */
     public void union(int point1, int point2){
         int root1 = root(point1);
@@ -73,9 +71,10 @@ public class UF {
      */
     public int root(int point){
         validate(point);//validate the number is valid
-        while (point != parent[point])//loop until at root node
+        while (point != parent[point]) {//loop until at root node
             parent[point] = parent[parent[point]];//path compression to flatten the tree, points to grandparent
             point = parent[point];//set point to grandparent, now parent
+        }
         return point;//root
     }
 
@@ -85,7 +84,7 @@ public class UF {
      * @throws IndexOutOfBoundsException
      */
     private void validate(int point){
-        if (point < 0 || point >= count)
+        if (point < 0 || point >= parent.length)
             throw new IndexOutOfBoundsException("Not a valid number");
 
     }
