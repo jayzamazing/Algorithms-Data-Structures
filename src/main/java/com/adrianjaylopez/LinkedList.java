@@ -1,4 +1,4 @@
-package com.adrianjaylopez.linkedlist;
+package com.adrianjaylopez;
 
 import java.util.Iterator;
 

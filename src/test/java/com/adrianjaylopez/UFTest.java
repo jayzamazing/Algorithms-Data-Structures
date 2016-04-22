@@ -1,6 +1,7 @@
-package com.adrianjaylopez.unionfind;
+package com.adrianjaylopez;
 
 import com.adrianjaylopez.HelperMethods;
+import com.adrianjaylopez.UF;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

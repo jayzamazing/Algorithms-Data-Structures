@@ -1,4 +1,4 @@
-package com.adrianjaylopez.leetcode;
+package com.adrianjaylopez;
 
 /**
  * Class to test anagram class.
@@ -6,6 +6,7 @@ package com.adrianjaylopez.leetcode;
  * @since <pre>11/27/15</pre>
  * @version 2.0
  */
+import com.adrianjaylopez.Anagram;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

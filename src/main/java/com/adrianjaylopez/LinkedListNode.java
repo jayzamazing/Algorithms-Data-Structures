@@ -1,4 +1,4 @@
-package com.adrianjaylopez.linkedlist;
+package com.adrianjaylopez;
 
 /**
  * A Node for use with a singly linked list

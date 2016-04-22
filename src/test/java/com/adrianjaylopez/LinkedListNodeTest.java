@@ -1,6 +1,7 @@
-package com.adrianjaylopez.linkedlist;
+package com.adrianjaylopez;
 
 import com.adrianjaylopez.HelperMethods;
+import com.adrianjaylopez.LinkedListNode;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +16,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class LinkedListNodeTest {
 
-    LinkedListNode <Integer> node, next;//declarations
+    LinkedListNode<Integer> node, next;//declarations
 
     /**
      * Setup before each test

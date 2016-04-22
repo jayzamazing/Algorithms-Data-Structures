@@ -1,6 +1,8 @@
-package com.adrianjaylopez.linkedlist;
+package com.adrianjaylopez;
 
 import com.adrianjaylopez.HelperMethods;
+import com.adrianjaylopez.LinkedList;
+import com.adrianjaylopez.LinkedListNode;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

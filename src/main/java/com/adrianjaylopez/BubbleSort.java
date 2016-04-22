@@ -1,4 +1,4 @@
-package com.adrianjaylopez.bubblesort;
+package com.adrianjaylopez;
 
 import java.util.Arrays;
 

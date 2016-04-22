@@ -1,4 +1,4 @@
-package com.adrianjaylopez.unionfind;
+package com.adrianjaylopez;
 
 /**
  * This is the union root class that is used to solve dynamic connectivity problem.

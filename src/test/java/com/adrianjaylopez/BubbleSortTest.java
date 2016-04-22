@@ -1,5 +1,6 @@
-package com.adrianjaylopez.bubblesort;
+package com.adrianjaylopez;
 
+import com.adrianjaylopez.BubbleSort;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
