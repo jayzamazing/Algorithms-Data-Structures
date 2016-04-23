@@ -1,6 +1,6 @@
 # Algorithms-Data-Structures
 <p>
-Simple Algorithms and Data Structures for my reference and practice. 
+Simple Algorithms and Data Structures in Java for my reference and practice.
 Barely starting, nowhere near complete. Will add more as time goes on.
 </p>
 <p>
@@ -12,9 +12,15 @@ Bubble Sort
 Linked List
 </li>
 <li>
-Union Find - currently working on it
+Union Find
 </li>
 <li>
 Anagram
 </li>
+<li>
+Fibonacci
+</li>
+<li>
+Factorial
+</p>
 </p>

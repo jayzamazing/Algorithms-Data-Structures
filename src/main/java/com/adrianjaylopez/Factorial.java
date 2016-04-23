@@ -5,7 +5,7 @@ package com.adrianjaylopez;
  * Good way to count the amount of ways you can order elements.
  * @author Adrian J Lopez
  * @since <pre>4/19/16</pre>
- * @version 1.0
+ * @version 1.1
  */
 public class Factorial {
     /**
@@ -29,7 +29,7 @@ public class Factorial {
     int fact2(int n){
         int j = 1;
         //loop from 2 till n
-        for (int i = 2; i < n; i++){
+        for (int i = 2; i <= n; i++){
             //factorial calculation
             j = j * i;
         }

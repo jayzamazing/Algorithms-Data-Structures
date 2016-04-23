@@ -4,9 +4,8 @@ package com.adrianjaylopez;
  * Class to test anagram class.
  * @author Adrian J Lopez
  * @since <pre>11/27/15</pre>
- * @version 2.0
+ * @version 2.1
  */
-import com.adrianjaylopez.Anagram;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

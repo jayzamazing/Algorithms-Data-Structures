@@ -5,7 +5,7 @@ package com.adrianjaylopez;
  * Using weighted quick-union with path compression.
  * @author Adrian J Lopez
  * @since <pre>11/28/15</pre>
- * @version 1.1
+ * @version 1.2
  */
 public class UF {
     //declarations
@@ -42,16 +42,16 @@ public class UF {
         int root2 = root(point2);
         if (root1 == root2) return;
 
-        //
+        //if root1 is lower in rank
         if (rank[root1] < rank[root2])
-            parent[root1] = root2;
-        else if (rank[root1] > rank[root2])
+            parent[root1] = root2;//set parent to root2
+        else if (rank[root1] > rank[root2])//if root1 is higher in rank
+            parent[root2] = root1;//set parent as root1
+        else{//otherwise set parent to root1
             parent[root2] = root1;
-        else{
-            parent[root2] = root1;
-            rank[root1]++;
+            rank[root1]++;//increment rank
         }
-        count--;
+        count--;//decrement count
     }
 
     /**

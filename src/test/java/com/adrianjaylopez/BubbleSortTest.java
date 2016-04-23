@@ -1,6 +1,5 @@
 package com.adrianjaylopez;
 
-import com.adrianjaylopez.BubbleSort;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +11,7 @@ import static org.junit.Assert.*;
  * This class tests the bubble sort class.
  * @author Adrian J Lopez
  * @since <pre>6/20/15</pre>
- * @version 2.0
+ * @version 2.1
  */
 public class BubbleSortTest {
 

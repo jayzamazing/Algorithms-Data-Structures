@@ -1,7 +1,6 @@
 package com.adrianjaylopez;
 
-import com.adrianjaylopez.HelperMethods;
-import com.adrianjaylopez.LinkedListNode;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Test cases for the LinkedListNode.
- * @version 2.0
+ * @version 2.1
  * @author Adrian J Lopez
  * @since <pre>6/24/15</pre>
  */

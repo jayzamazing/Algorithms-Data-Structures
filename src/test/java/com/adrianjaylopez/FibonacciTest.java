@@ -3,25 +3,24 @@ package com.adrianjaylopez;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
-
+import static org.junit.Assert.*;
 
 /**
- * Tests the factorial class.
+ * Tests the fibonacci class.
  * @author Adrian J Lopez
  * @since <pre>4/22/16</pre>
- * @version 1.1
+ * @version 1.0
  */
-public class FactorialTest {
-    Factorial f;
+public class FibonacciTest {
+    Fibonacci f;
     /**
      * This runs before each test for the initial setup
      * @throws Exception
      */
     @Before
-    public void setUp() throws Exception{
-        f = new Factorial();// instantiate class
+    public void setUp() throws Exception {
+        f = new Fibonacci();// instantiate class
     }
 
     /**
@@ -35,23 +34,21 @@ public class FactorialTest {
     }
 
     /**
-     * Tests the recursive factorial method.
+     * Tests the fibonacci recursive method.
      * @throws Exception
      */
     @Test
-    public void fact() throws Exception {
-        assertEquals(120, f.fact(5));//checks value of factorial
-
+    public void fib() throws Exception {
+        assertEquals(8, f.fib(6));//checks value of fibonacci sequence
     }
 
     /**
-     * Tests the non recursive factorial method.
+     * Tests the fibonacci loop method.
      * @throws Exception
      */
     @Test
-    public void fact2() throws Exception {
-        assertEquals(120, f.fact(5));//checks value of factorial
-
+    public void fib2() throws Exception {
+        assertEquals(8, f.fib(6));//checks value of fibonacci sequence
     }
 
 }
