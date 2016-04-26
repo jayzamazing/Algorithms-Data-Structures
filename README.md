@@ -22,5 +22,9 @@ Fibonacci
 </li>
 <li>
 Factorial
+</li>
+<li>
+Binary Search - In Work
+</li>
 </p>
 </p>
